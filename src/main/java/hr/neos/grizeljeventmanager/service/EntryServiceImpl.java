@@ -1,6 +1,9 @@
 package hr.neos.grizeljeventmanager.service;
 
+import hr.neos.grizeljeventmanager.dto.request.EntryRequestDto;
+import hr.neos.grizeljeventmanager.dto.response.EntryResponseDto;
 import hr.neos.grizeljeventmanager.entity.Entry;
+import hr.neos.grizeljeventmanager.mapper.EntryMapper;
 import hr.neos.grizeljeventmanager.repository.EntryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,17 +15,19 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class EntryServiceImpl implements EntryService {
 	private final EntryRepository entryRepository;
+	private final EntryMapper entryMapper;
 
 	@Override
-	public Entry save(Entry entry) {
+	public Entry save(EntryRequestDto dto) {
+		Entry entry = entryMapper.toEntity(dto);
 		return entryRepository.save(entry);
 	}
 
 	@Override
-	public Entry getById(Long id) {
+	public EntryResponseDto getById(Long id) {
 		Optional<Entry> entry = entryRepository.findById(id);
 		if (entry.isPresent()) {
-			return entry.get();
+			return entryMapper.toDto(entry.get());
 		} else {
 			throw new NoSuchElementException("Entry with id " + id + " not found");
 		}
