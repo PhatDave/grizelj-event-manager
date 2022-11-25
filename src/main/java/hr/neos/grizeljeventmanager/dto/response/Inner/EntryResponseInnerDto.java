@@ -1,4 +1,4 @@
-package hr.neos.grizeljeventmanager.dto.response;
+package hr.neos.grizeljeventmanager.dto.response.Inner;
 
 import lombok.*;
 
