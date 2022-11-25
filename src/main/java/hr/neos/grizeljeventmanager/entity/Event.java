@@ -9,13 +9,13 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "events")
+@Table(name = "event")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Event {
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="entry_sequence")
-    @SequenceGenerator(name="entry_sequence", allocationSize=10)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="event_sequence")
+    @SequenceGenerator(name="event_sequence", allocationSize=10)
     @Setter(AccessLevel.PRIVATE)
     private Long id;
     @Column(unique = true)
