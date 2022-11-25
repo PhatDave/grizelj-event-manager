@@ -1,10 +1,11 @@
-package hr.neos.grizeljeventmanager.service;
+package hr.neos.grizeljeventmanager.service.Implementation;
 
 import hr.neos.grizeljeventmanager.dto.request.EntryRequestDto;
 import hr.neos.grizeljeventmanager.dto.response.EntryResponseDto;
 import hr.neos.grizeljeventmanager.entity.Entry;
 import hr.neos.grizeljeventmanager.mapper.EntryMapper;
 import hr.neos.grizeljeventmanager.repository.EntryRepository;
+import hr.neos.grizeljeventmanager.service.EntryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class EntryServiceImpl implements EntryService {
+public class EntryServiceImplementation implements EntryService {
 	private final EntryRepository entryRepository;
 	private final EntryMapper entryMapper;
 
