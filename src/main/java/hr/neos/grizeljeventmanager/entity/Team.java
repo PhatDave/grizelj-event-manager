@@ -19,6 +19,8 @@ public class Team {
     private Long id;
     @Column(unique = true)
     private String name;
-    @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private List<Mentor> mentors;
+    @ManyToOne(fetch =  FetchType.LAZY)
+    private Event event;
 }

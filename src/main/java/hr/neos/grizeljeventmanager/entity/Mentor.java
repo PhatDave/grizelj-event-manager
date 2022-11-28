@@ -16,5 +16,7 @@ public class Mentor {
     @SequenceGenerator(name="mentor_sequence", allocationSize=10)
     @Setter(AccessLevel.PRIVATE)
     private Long id;
-    private String mentorEmail;
+    private String email;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Team team;
 }
