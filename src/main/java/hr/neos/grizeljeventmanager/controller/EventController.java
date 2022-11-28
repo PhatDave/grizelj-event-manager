@@ -1,8 +1,6 @@
 package hr.neos.grizeljeventmanager.controller;
 
-import hr.neos.grizeljeventmanager.dto.request.EntryRequestDto;
 import hr.neos.grizeljeventmanager.dto.request.EventRequestDto;
-import hr.neos.grizeljeventmanager.dto.response.EntryResponseDto;
 import hr.neos.grizeljeventmanager.dto.response.EventResponseDto;
 import hr.neos.grizeljeventmanager.service.EventService;
 import lombok.RequiredArgsConstructor;
