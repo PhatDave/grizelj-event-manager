@@ -3,7 +3,8 @@ package hr.neos.grizeljeventmanager.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Entity
@@ -20,9 +21,12 @@ public class Event {
     private Long id;
     @Column(unique = true)
     private String name;
-    @OneToMany(mappedBy = "event", fetch = FetchType.EAGER)
+    private Integer maxParticipants;
+    @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
     private List<Team> teams;
-    private Date registrationsNotBefore;
-    private Date registrationsNotAfter;
-    private Date confirmationNotAfter;
+    private ZonedDateTime registrationsNotBefore;
+    private ZonedDateTime registrationsNotAfter;
+    private ZonedDateTime confirmationNotAfter;
+    private LocalDate startDate;
+    private Integer weeks;
 }
