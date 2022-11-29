@@ -8,4 +8,5 @@ public interface EventService {
     Event save(EventRequestDto dto);
 
     EventResponseDto getById(Long id);
+    void deleteEventById(Long id);
 }
